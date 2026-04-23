@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Almarai:wght@300;400;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-arabic: "Almarai", sans-serif;
+  
+  --color-brand-gold: #B89E6B;
+  --color-brand-gold-light: #D4C3A3;
+  --color-brand-dark: #1A1A1A;
+  --color-brand-cream: #FCFBF7;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans text-brand-dark bg-brand-cream;
+    cursor: default;
+  }
+  
+  .glass {
+    @apply bg-white/80 backdrop-blur-md border border-white/40 shadow-xl shadow-brand-gold/5;
+  }
+
+  .mesh-gradient {
+    background-color: #fcfbf7;
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(38, 38%, 92%, 1) 0, transparent 50%), 
+      radial-gradient(at 50% 0%, hsla(38, 20%, 98%, 1) 0, transparent 50%), 
+      radial-gradient(at 100% 0%, hsla(38, 38%, 92%, 1) 0, transparent 50%);
+  }
+
+  .grayscale-map {
+    filter: grayscale(100%) contrast(1.1) opacity(0.8);
+    transition: all 0.5s ease;
+  }
+
+  .grayscale-map:hover {
+    filter: grayscale(0%) contrast(1) opacity(1);
+  }
+}
